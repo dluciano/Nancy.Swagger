@@ -18,21 +18,25 @@ steps:
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
+  displayName: 'Restore all solutions'
   inputs:
     restoreSolution: '$(solution)'
 
 - task: VSBuild@1
+  displayName: 'Build all'
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
+  displayName: 'Test all'
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Package projects inside src folder'
   inputs:
     command: 'pack'
     packagesToPack: 'src/**/*.csproj'
@@ -43,6 +47,7 @@ steps:
     patchVersion: '0'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Publish all packages of folder $(Build.ArtifactStagingDirectory)'
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
