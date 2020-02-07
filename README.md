@@ -1,4 +1,5 @@
-# Nancy.Swagger [![Build status](https://ci.appveyor.com/api/projects/status/jm2q8t8y4u18n03r)](https://ci.appveyor.com/project/yahehe/nancy-swagger)
+# Nancy.Swagger 
+[![Build Status](https://dev.azure.com/TestDevOpsD/Test/_apis/build/status/dluciano.Nancy.Swagger?branchName=master)](https://dev.azure.com/TestDevOpsD/Test/_build/latest?definitionId=1&branchName=master)
 
 Nancy plugin for generated API documentation in Swagger format.
 
